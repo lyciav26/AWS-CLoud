@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 Web Server for Project 2 (IaC)
+
+Resources:
+  WebEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-08d59269edddde222
+      SubnetId: subnet-0aa6e865617e6aead
+      SecurityGroupIds:
+        -  sg-0316e0ed7cff8a5a4
+      IamInstanceProfile: UniversityRegistrationApp-EC2-Role
+      Tags:
+        - Key: Name
+          Value: Project2-Web-Server
